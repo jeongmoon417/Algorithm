@@ -23,8 +23,8 @@ int AorB[1001];
 
 void dfs (int s, int kind) {	//A=1, B=2
 
-	for (int i=0; i<adj[s].size(); i++) {	//모든 S와 연결된 vertext들에 대해서
-		if(!visited[adj[s][i]] ) {	//연결된 i번째 vertext가 방문하지 않은 노드라면
+	for (int i=0; i<adj[s].size(); i++) {	//모든 S와 연결된 vertex들에 대해서
+		if(!visited[adj[s][i]] ) {	//연결된 i번째 vertex가 방문하지 않은 노드라면
 			visited[adj[s][i]]=true;
 			if(kind == 1) {	//만약 내가 A이면
 				dfs(adj[s][i], 2);
