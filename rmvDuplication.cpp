@@ -1,9 +1,9 @@
 /****************************************************
- * 		Áßº¹ Á¦°Å ¾Ë°í¸®Áò
+ * 		ì¤‘ë³µ ì œê±° ì•Œê³ ë¦¬ì¦˜
  *
- * 	1) ¸ğµç ¿ø¼Ò ºñ±³
- * 	2) Á¤·Ä ÀÌ¿ë
- * 	3) ÇØ½Ã ÀÌ¿ë
+ * 	1) ëª¨ë“  ì›ì†Œ ë¹„êµ
+ * 	2) ì •ë ¬ ì´ìš©
+ * 	3) í•´ì‹œ ì´ìš©
  *
  * *************************************************/
 
@@ -19,7 +19,7 @@
 using namespace std;
 
 
-/* ÀÓÀÇÀÇ ¹®ÀÚ¿­ »ı¼º */
+/* ì„ì˜ì˜ ë¬¸ìì—´ ìƒì„± */
 void createRandString(string* str, int size) {
 	
 	char temp;
@@ -33,7 +33,7 @@ void createRandString(string* str, int size) {
 	
 }
 
-/*º¤ÅÍ¸¦ »ç¿ëÇÑ Áßº¹Á¦°Å*/
+/*ë²¡í„°ë¥¼ ì‚¬ìš©í•œ ì¤‘ë³µì œê±°*/
 void byCompare1 (string str, int size) {
 	
 	vector<char> result;
@@ -56,13 +56,13 @@ void byCompare1 (string str, int size) {
 }
 
 
-/*¾ËÆÄºªÁ¡À¯¸¦ »ç¿ëÇÑ Áßº¹Á¦°Å*/
+/*ì•ŒíŒŒë²³ì ìœ ë¥¼ ì‚¬ìš©í•œ ì¤‘ë³µì œê±°*/
 void byCompare2 (string str, int size){
 
-	/**********ÃÊ±âÈ­**********/
+	/**********ì´ˆê¸°í™”**********/
 	int count[26]={0,};
 
-	/*¾ËÆÄºª Á¡À¯ °Ë»ç*/
+	/*ì•ŒíŒŒë²³ ì ìœ  ê²€ì‚¬*/
 	for (int i=0; i<size; i++){
 		count[str[i]%26]=1;		
 	}
@@ -82,7 +82,7 @@ void bySort (string str, int size) {
 	
 	char tmp;
 	
-	/*Á¤·Ä*/
+	/*ì •ë ¬*/
 	for (int i=0; i< size; i++) {
 		for (int j=i+1; j<size; j++) {
 			if (str[i] > str [j]) {
@@ -109,15 +109,15 @@ int main () {
 	cout << "======= Program for Removing duplication =======\n";
 	cout << " *Enter size: ";
 	
-	//¹®ÀÚ¿­ÀÇ Å©±â ÀÔ·Â, ¹®ÀÚ¿­ Ãâ·Â
+	//ë¬¸ìì—´ì˜ í¬ê¸° ì…ë ¥, ë¬¸ìì—´ ì¶œë ¥
 	cin >> str_size;
 	
 	string str;
 	createRandString(&str, str_size);
 	cout << str << endl;
 
-	//byCompare2(str, str_size);
-	//byCompare1(str, str_size);
+	byCompare2(str, str_size);
+	byCompare1(str, str_size);
 	bySort(str, str_size);
 
 	//cout << rmvDup
